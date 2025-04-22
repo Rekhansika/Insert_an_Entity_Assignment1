@@ -1,15 +1,17 @@
-// src/App.jsx
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import AddBook from "./components/AddBook";
 
-import React from 'react';
-import Home from './Home';
-import './App.css'; // Import global styles
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-book" element={<AddBook/>} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
